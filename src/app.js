@@ -2,6 +2,7 @@ App = {
   load: async () =>{
       console.log("app loading...");
       await App.loadWeb3()
+      await App.loadAccount()
   },
 
 
@@ -41,7 +42,10 @@ App = {
 
 
 
-
+loadAccount: async () =>{
+  App.account = web3.error.account[0]
+  console.log(App.account)
+}
 }
 
 $(() => {
